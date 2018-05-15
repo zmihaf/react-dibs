@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import openSocket from 'socket.io-client';
+import io from 'socket.io-client';
 
 class DibsClientComponent extends Component {
   state = {
     pageVisitorList: [],
   }
 
-  socket = openSocket(this.props.dibsServerAddress);
+  socket = io(this.props.dibsServerAddress, { path: '/dibs' });
 
   componentDidMount() {
     this.socket.emit('PAGE_VISIT', window.location.href, this.props.username, Date.now());
