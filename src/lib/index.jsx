@@ -6,7 +6,7 @@ class DibsClientComponent extends Component {
     pageVisitorList: [],
   }
 
-  socket = io(this.props.dibsServerAddress, { path: '/dibs' });
+  socket = io(this.props.dibsServerAddress);
 
   componentDidMount() {
     this.socket.emit('PAGE_VISIT', window.location.href, this.props.username, Date.now());
