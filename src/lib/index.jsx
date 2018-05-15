@@ -12,14 +12,14 @@ class DibsClientComponent extends Component {
     this.socket.emit('PAGE_VISIT', window.location.href, this.props.username, Date.now());
     this.socket.on('PAGEVISITORINFO_UPDATE', pageVisitorInfo => {
       const pageVisitorList = [];
-      for (const username in pageVisitorInfo) {
+      for (const username in pageVisitorInfo[window.location.href]) {
         pageVisitorList.push({
           username,
-          visitTimestamp: pageVisitorInfo[username],
+          visitTimestamp: pageVisitorInfo[window.location.href][username],
         });
       }
       this.setState({
-        pageVisitorList: pageVisitorList[window.location.href].sort((a,b) => a.visitTimestamp - b.visitTimestamp),
+        pageVisitorList: pageVisitorList.sort((a,b) => a.visitTimestamp - b.visitTimestamp),
       });
     });
   }
