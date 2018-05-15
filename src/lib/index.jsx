@@ -19,7 +19,7 @@ class DibsClientComponent extends Component {
         });
       }
       this.setState({
-        pageVisitorList: pageVisitorList.sort((a,b) => a.visitTimestamp - b.visitTimestamp),
+        pageVisitorList: pageVisitorList[window.location.href].sort((a,b) => a.visitTimestamp - b.visitTimestamp),
       });
     });
   }
