@@ -1,6 +1,6 @@
 {
   "name": "react-dibs",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "dibs react client higher order component",
   "main": "lib/index.js",
   "scripts": {
