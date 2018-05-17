@@ -6,7 +6,7 @@ class DibsClientComponent extends Component {
     pageVisitorList: [],
   }
 
-  socket = io('https://localhost:3001', { secure: true, reconnect: true, rejectUnauthorized : false });
+  socket = io('http://localhost:3000');
 
   componentDidMount() {
     this.socket.emit('PAGE_VISIT', window.location.href, this.props.username, Date.now());
