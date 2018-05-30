@@ -5,7 +5,7 @@ import DibsClientComponent from "../../lib";
 function Demo() {
   return (
     <DibsClientComponent
-      dibsServerAddress={'http://140.82.29.51:3000'}
+      dibsServerAddress={'https://dibs.test.tvlk.cloud'}
       username={'dibs'}
     >
       {dibs => JSON.stringify(dibs, null, 4)}
