@@ -20,7 +20,6 @@ And it will provides a render props which consists of:
 * Install
 ```
   yarn add react-dibs
-
 ```
 * Import
 ```
